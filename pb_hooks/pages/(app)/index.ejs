@@ -1,0 +1,15 @@
+<h1>What do you want to learn?</h1>
+<div class="htmx-indicator">Searching...</div>
+<input
+  hx-post="/hx/search"
+  hx-target="#search-results"
+  hx-trigger="input changed delay:500ms, search"
+  type="text"
+  name="search"
+  placeholder="PocketBase, PocketHost, JSVM, golang, girlfriend..."
+  hx-indicator=".htmx-indicator"
+/>
+
+<section id="search-results">
+  <%- include('/_includes/course-card-list.ejs', { courses: data.courses }) %>
+</section>
